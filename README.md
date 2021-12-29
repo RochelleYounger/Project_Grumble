@@ -1,16 +1,16 @@
 # Project-1
-# Description 
+## Description 
 This project allows user to search for...
 
-# UI Mockup
+## UI Mockup
 
-# APIs Used
+## APIs Used
 
-# Group-3 Team Members
-Tristan Crain - 
-Dalia Farag - 
-Rochelle Younger - 
-James Varis - 
+## Group-3 Team Members
+* Tristan Crain - 
+* Dalia Farag - 
+* Rochelle Younger - 
+* James Varis - 
 
-# Application Wireframe 
+## Application Wireframe 
 
