@@ -22,7 +22,7 @@ var test = function (event) {
     }
     console.log(inputEl);
 
-    function fetchData (input) {
+    function fetchRecipe (input) {
         var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=db254b5cd61744d39a2deebd9c361444&ingredients=" + input + "&number=1";
       
         fetch(requestUrl).then(function(response) {
@@ -40,15 +40,51 @@ var test = function (event) {
                     recipeImg.src=data[0].image;
                     divEl.appendChild(recipeImg);
 
+                    var recipeId = data[0].id;
+                    var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=948e50c68fc14d59b9b4ff776f8fa614&includeNutrition=false"
+
+                    function getInfo() {
+                        fetch(requestUrl).then(function(response) {
+                            if (response.ok) {
+                                response.json().then(function(data) {
+                                    console.log(data);
+                                    var recipeIngredientsEl = document.createElement("h2")
+                                    recipeIngredientsEl.innerText = "Ingredients"
+                                    divEl.appendChild(recipeIngredientsEl);
+
+                                    for (i=0; i < data.extendedIngredients.length; i++) {
+                                        ingredientEl = document.createElement("p");
+                                        ingredientEl.innerText = data.extendedIngredients[i].name;
+                                        divEl.appendChild(ingredientEl);
+                                    }
+                                    var recipeStepsEl = document.createElement("h2");
+                                    recipeStepsEl.innerText = "Instructions";
+                                    divEl.appendChild(recipeStepsEl);
+
+                                    var stepsEl = document.createElement("p");
+                                    stepsEl.innerText = data.instructions;
+                                    divEl.appendChild(stepsEl);
+                                })
+                            }
+                        })
+                    }
+
+                    getInfo();
+
                     document.querySelector("body").appendChild(divEl);
 
                 })
         
             }
-        })    
+        })
     }
 
-    fetchData(inputEl);
+    
+
+    
+
+
+    fetchRecipe(inputEl);
 
     document.getElementById("ingredient-input").value = "";
 
