@@ -40,3 +40,10 @@ form {
 .input {
     display: inline;
 }
+
+#recipeSearch {
+    border: 3px;
+    border-style: solid;
+    border-color: blue;
+    padding: 20px;
+    margin: 30px}
