@@ -1,0 +1,102 @@
+.va {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero{
+    background: url(https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500), linear-gradient(52deg, #42475C 0%, #20222E 71%);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .cta {
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHTEANZOtGuJKCdCDi1VId-n01P5-Irkj2w&usqp=CAU), linear-gradient(52deg, #42475C 0%, #20222E 71%);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .cta {
+    height: 500px;
+    border-top: 10px solid turquoise;
+  }
+  
+  footer {
+    color: white;
+    background: rgb(14, 14, 14) !important;
+  }
+  
+  footer strong {
+    color: turquoise;
+  }
+  
+  footer a {
+    color: turquoise;
+  }
+  
+  .title {
+    color: white;
+    font-weight: 800;
+    font-size: 4rem;
+    font-family: 'Nunito Sans', sans-serif;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3);
+  }
+  
+  .subtitle {
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3);
+  }
+  
+  hr.content-divider {
+    max-width: 75px;
+    height: 5px;
+  }
+  
+  #parallax-1 {
+    background: url(https://www.acouplecooks.com/wp-content/uploads/2020/12/Honey-Garlic-Shrimp-026-735x919.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: 10px solid coral;
+  }
+  
+  #parallax-1 hr {
+    background: coral;
+  }
+  
+  #parallax-2 {
+    background: url(https://www.acouplecooks.com/wp-content/uploads/2020/01/Sheet-Pan-Dinner-019.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: 10px solid yellow;
+  }
+  
+  #parallax-2 hr {
+    background: yellow;
+  }
+  
+  .label {
+    color: white;
+  }
+
+  .email {
+    color: white;
+  }
+  
+  input {
+    background: transparent !important;
+    border: 1px solid turquoise !important;
+    color: white !important;
+  }
+  
+  input::placeholder {
+    color: white !important;
+  }
+  
