@@ -1,159 +1,112 @@
-/*h1 {
-    font-weight: 700;
-    font-size: 50px;
-    padding: 20px;
-    border: 3px;
-    border-style: solid;
-    border-color: red;
-    margin: 30px;
-    color: black;
-    text-align: center;
-}
-.border {
-    border: 3px;
-    border-style: solid;
-    border-color: red;
-    margin: 30px
+/*Global Variables*/
+:root {
+  --background-color: #20222e;
+  --section1-color: #40e0d0;
+  --section2-color: #ff8052;
+  --section3-color: #50c878;
 }
 
-h2 {
-    font-weight: 700;
-    font-size: 38;
-    padding: 20px;
-    border: 1px;
-    border-style: solid;
-    border-color: red;
-    margin: 30px;
-    color: black;
-    text-align: center;
+body {
+  font-family: "Nunito Sans", sans-serif;
 }
 
-form {
-    text-align: center;
-    padding: 20px;
-    border: 1px;
-    border-style: solid;
-    border-color: red;
-    margin: 30px;
+p {
+  font-size: 20px;
+  color: white;
 }
 
-.input {
-    display: inline;
+h1 {
+  font-size: 40px;
+  font-weight: bolder;
 }
-
-#recipe-search {
-    border: 3px;
-    border-style: solid;
-    border-color: blue;
-    padding: 20px;
-    margin: 30px}
-} */
-
-
-/* DALIA'S STYLING START HERE */
-
 
 .di {
-    display: flex;
-    align-items: center;
-  }
-  
-  .hero{
-    background: url(https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500), linear-gradient(52deg, #42475C 0%, #20222E 71%);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  display: flex;
+  align-items: center;
+}
 
-  .feedback {
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHTEANZOtGuJKCdCDi1VId-n01P5-Irkj2w&usqp=CAU), linear-gradient(52deg, #42475C 0%, #20222E 71%);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  .feedback {
-    height: 500px;
-    border-top: 10px solid turquoise;
-  }
-  
-  footer {
-    color: white;
-    background: rgb(14, 14, 14) !important;
-  }
-  
-  footer strong {
-    color: turquoise;
-  }
-  
-  footer a {
-    color: turquoise;
-  }
-  
-  .title {
-    color: white;
-    font-weight: 800;
-    font-size: 4rem;
-    font-family: 'Nunito Sans', sans-serif;
-    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3);
-  }
-  
-  .subtitle {
-    color: white;
-    font-size: 1.2rem;
-    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3);
-  }
-  
-  hr.content-divider {
-    max-width: 75px;
-    height: 5px;
-  }
-  
-  #ingredients {
-    background: url(https://www.acouplecooks.com/wp-content/uploads/2020/12/Honey-Garlic-Shrimp-026-735x919.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top: 10px solid coral;
-  }
-  
-  #ingredients hr {
-    background: coral;
-  }
-  
-  #pastrecipe {
-    background: url(https://www.acouplecooks.com/wp-content/uploads/2020/01/Sheet-Pan-Dinner-019.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top: 10px solid yellow;
-  }
-  
-  #pastrecipe hr {
-    background: yellow;
-  }
-  
-  .label {
-    color: white;
-  }
+.hero {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  .email {
-    color: white;
-  }
-  
-  input {
-    background: transparent !important;
-    border: 1px solid turquoise !important;
-    color: white !important;
-  }
-  
-  input::placeholder {
-    color: white !important;
-  }
-} 
-/* DALIA'S STYLING ENDS HERE */
+.container {
+  background-color: var(--background-color);
+  padding: 100px;
+  border-radius: 20px;
+}
 
+hr.content-divider {
+  max-width: 75px;
+  height: 5px;
+}
+
+/*Welcome Section*/
+#welcome {
+  background-image: url(../img/Welcome-Background-Img.jpeg);
+}
+#welcome .title {
+  color: var(--section1-color);
+}
+
+/*Ingredients Section*/
+#ingredients {
+  background: url(../img/Ingredients-Background-Img.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 10px solid var(--section2-color);
+}
+
+#ingredients hr {
+  background: var(--section2-color);
+}
+
+#ingredients .title {
+  color: var(--section2-color);
+}
+
+#ingredients input {
+  background: transparent;
+  border: 1px solid var(--section2-color);
+  color: white;
+}
+
+#ingredients input::placeholder {
+  color: white !important;
+}
+
+/*Past Recipes Section*/
+#pastrecipe {
+  background: url(../img/Past-Recipes-Background-Img.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 10px solid var(--section3-color);
+}
+
+#pastrecipe hr {
+  background: var(--section3-color);
+}
+
+#pastrecipe .title {
+  color: var(--section3-color);
+}
+
+/*Footer Section*/
+footer {
+  color: white;
+  background-color: var(--background-color) !important;
+  padding: 4rem !important;
+}
+
+footer strong {
+  color: var(--section1-color);
+}
+
+footer a {
+  color: var(--section1-color);
+}
