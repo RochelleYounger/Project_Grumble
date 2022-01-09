@@ -14,60 +14,63 @@
     </head>
     <body>
         <!--Dalia's code start: User ingredients and recipe input-->
-
-        <section id="welcome" class="hero is-medium">
-            <div class="hero-body">
-                <div class="container">
-                    <h1 class="title is-1 "> Welcome to Grumble </h1>
-                    <p>We know that planning a meal can be tiresome, and finding the right recipes can be daunting. That's why we created an app that does the hard part for you. </p>
+        <main id="page-1">
+            <section id="welcome" class="hero is-medium">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title is-1 "> Welcome to Grumble </h1>
+                        <p>We know that planning a meal can be tiresome, and finding the right recipes can be daunting. That's why we created an app that does the hard part for you. </p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        
-        <section id="ingredients" class="hero is-large">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column is-6 is-offset-6">
-                            <h1 class="title is-1 "> Your dinner starts here!</h1>
-                            <p>All you have to do is let us know what's in your fridge.</p>
-                            <hr class="content-divider">
-                            <form id="recipe-search">
-                                <input type="text" name="ingredients" id="ingredient-input" class="button is-white is-inverted" placeholder="Enter Ingredients Here" />
-                                <button type="submit" id="input-submit" class="button is-white is-inverted">Search Recipes</button>
-                                <a href="#" class="button is-white is-inverted">Add Ingredient&ensp;<i class="fad fa-chevron-right"></i></a>
-                            </form>
+            </section>
+            
+            <section id="ingredients" class="hero is-large">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-6 is-offset-6">
+                                <h1 class="title is-1 "> Your dinner starts here!</h1>
+                                <p>All you have to do is let us know what's in your fridge.</p>
+                                <hr class="content-divider">
+                                <form id="recipe-search">
+                                    <input type="text" name="ingredients" id="ingredient-input" class="button is-white is-inverted" placeholder="Enter Ingredients Here" />
+                                    <button type="submit" id="input-submit" class="button is-white is-inverted">Search Recipes</button>
+                                    <a href="#" class="button is-white is-inverted">Add Ingredient&ensp;<i class="fad fa-chevron-right"></i></a>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="pastrecipe" class="hero is-large">
-            <div class="hero-body">
-              <div class="container">
-                <div class="columns">
-                  <div class="column is-6">
-                    <h1 class="title is-1 "> Past Recipes </h1>
-                    <p>Here's what we recommended last time you were here.</p>
-                    <hr class="content-divider">
+            </section>
+    
+            <section id="pastrecipe" class="hero is-large">
+                <div class="hero-body">
+                  <div class="container">
+                    <div class="columns">
+                      <div class="column is-6">
+                        <h1 class="title is-1 "> Past Recipes </h1>
+                        <p>Here's what we recommended last time you were here.</p>
+                        <hr class="content-divider">
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-        </section>
+            </section>
         
-        <footer class="footer">
-            <div class="content has-text-centered">
-              <p>
-                <strong>Grumble</strong> by <a href="https://jgthms.com">Tristan, Dalia and Rochelle </a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-              </p>
-            </div>
-        </footer>
+        
+            <footer class="footer">
+                <div class="content has-text-centered">
+                <p>
+                    <strong>Grumble</strong> by <a href="https://jgthms.com">Tristan, Dalia and Rochelle </a>. The source code is licensed
+                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                    is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                </p>
+                </div>
+            </footer>
+        </main>
 
+        <script src="./assets/js/page-navigation.js"></script>
         <script src="./assets/js/recipe_script.js"></script>
-        <script src="./assets/js/cocktail-script.js"></script>
+
     </body>
 </html>
