@@ -46,4 +46,22 @@ form {
     border-style: solid;
     border-color: blue;
     padding: 20px;
-    margin: 30px}
+    margin: 30px
+}
+
+.recipe-section{
+    text-align: center;
+    padding: 20px;
+    border: 1px;
+    border-style: solid;
+    border-color: red;
+    margin: 30px;}
+
+.card {
+    text-align: center;
+    border: 3px;
+    border-style: solid;
+    border-color: blue;
+    padding: 5px;
+    margin: 10px;
+}
