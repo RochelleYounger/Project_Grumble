@@ -25,7 +25,7 @@ var test = function (event) {
     console.log(inputEl);
 
     function fetchRecipe (input) {
-        var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=a0b4d0a4cdae4c38bf5eaefd861933fc&ingredients=" + input + "&number=9";
+        var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=a0b4d0a4cdae4c38bf5eaefd861933fc&ingredients=" + input + "&number=1";
       
         fetch(requestUrl).then(function(response) {
             if (response.ok) {
@@ -42,7 +42,7 @@ var test = function (event) {
                         console.log(data[i].title)
     
                         var recipeId = data[i].id;
-                        var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=db254b5cd61744d39a2deebd9c361444&includeNutrition=false";
+                        var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=a0b4d0a4cdae4c38bf5eaefd861933fc&includeNutrition=false";
                         function getInfo(requestUrl) {
                             fetch(requestUrl).then(function(response) {
                                 if (response.ok) {
