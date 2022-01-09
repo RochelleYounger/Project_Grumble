@@ -52,8 +52,8 @@ var test = function (event) {
                                     recipeIngredientsEl.innerText = "Ingredients"
                                     divEl.appendChild(recipeIngredientsEl);
 
-                                    for (i=0; i < data.extendedIngredients.length; i++) {
-                                        ingredientEl = document.createElement("p");
+                                    for (var i=0; i < data.extendedIngredients.length; i++) {
+                                        var ingredientEl = document.createElement("p");
                                         ingredientEl.innerText = data.extendedIngredients[i].name;
                                         divEl.appendChild(ingredientEl);
                                     }
@@ -61,9 +61,30 @@ var test = function (event) {
                                     recipeStepsEl.innerText = "Instructions";
                                     divEl.appendChild(recipeStepsEl);
 
-                                    var stepsEl = document.createElement("p");
-                                    stepsEl.innerText = data.instructions;
-                                    divEl.appendChild(stepsEl);
+                                    for (var i=0; i < data.analyzedInstructions[0].steps.length; i++) {
+                                        var stepEl = document.createElement("p");
+                                        stepEl.innerText = "Step " + (i+1) + "   " +  data.analyzedInstructions[0].steps[i].step;
+                                        divEl.appendChild(stepEl);
+                                    }
+
+                                    var linkEl = document.createElement("h2");
+                                    linkEl.innerText = "Link";
+                                    divEl.appendChild(linkEl);
+
+                                    var text = document.createElement("p");
+                                    text.innerText = "View recipe website ";
+                                    divEl.appendChild(text);
+
+                                    var span = document.createElement("span");
+                                    text.appendChild(span);
+
+                                    var link = document.createElement("a");
+                                    link.innerText = "here";
+                                    link.setAttribute("href", data.sourceUrl)
+                                    link.setAttribute("target", "_blank");
+                                    span.appendChild(link);
+
+                                    
                                 })
                             }
                         })
