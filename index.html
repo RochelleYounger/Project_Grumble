@@ -28,14 +28,13 @@
                 <div class="hero-body">
                     <div class="container">
                         <div class="columns">
-                            <div class="column is-6 is-offset-6">
+                            <div class="column is-6 is-offset-6" id="ingredients-column">
                                 <h1 class="title is-1 "> Your dinner starts here!</h1>
                                 <p>All you have to do is let us know what's in your fridge.</p>
                                 <hr class="content-divider">
                                 <form id="recipe-search">
-                                    <input type="text" name="ingredients" id="ingredient-input" class="button is-white is-inverted" placeholder="Enter Ingredients Here" />
-                                    <button type="submit" id="input-submit" class="button is-white is-inverted">Search Recipes</button>
-                                    <a href="#" class="button is-white is-inverted">Add Ingredient&ensp;<i class="fad fa-chevron-right"></i></a>
+                                    <input type="text" name="ingredients" id="ingredient-input" class="button is-white is-inverted" value="Enter Ingredients Here" />
+                                    <a id="add-ingredient-button"class="button is-white is-inverted">Add Ingredient&ensp;<i class="fad fa-chevron-right"></i></a>
                                 </form>
                             </div>
                         </div>
@@ -69,8 +68,7 @@
             </footer>
         </main>
 
-        <script src="./assets/js/page-navigation.js"></script>
-        <script src="./assets/js/recipe_script.js"></script>
+        <script src="./assets/js/full-script.js"></script>
 
     </body>
 </html>
