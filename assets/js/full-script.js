@@ -263,15 +263,13 @@ function processAddingIngredient(){
 //Process user clicks
 function clickHandler(event){
 
-    event.preventDefault();
     var clickedEl = event.target;
 
     if(clickedEl.matches("#ingredient-input")){
         clickedEl.value = "";
     }
 
-    else if(clickedEl.matches("#add-ingredient-button") || clickedEl.matches("#recipe-search")){
-        
+    else if(clickedEl.matches("#add-ingredient-button")){
         processAddingIngredient();
     }
 
@@ -300,4 +298,3 @@ function clickHandler(event){
 }
 
 pageContentEl.addEventListener("click", clickHandler);
-pageContentEl.addEventListener("submit",clickHandler);
