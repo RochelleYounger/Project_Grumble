@@ -5,94 +5,70 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Grumble</title>
+
+        <!-- Dalia's Bulma CSS-->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
         <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
     <body>
-        <section>
-            <div>
-                <h1>Welcome to Grumble!</h1>
-            </div>
-        </section>
-        <form id="recipe-search">
-            <input type="text" name="ingredients" id="ingredient-input" placeholder="Enter Ingredients Here" />
-            <button type="submit" id="input-submit">Search Recipes</button>
-        </form>
-        <!-- <section>
-            <div class="border">
-                <h2>What's in your fridge!</h2>
-                <form>
-                    <div class="input">
-                        <label for="checkbox">Sample Ingredient</label>
-                        <input type="checkbox" name="checkbox" id="checkbox" />
+        <!--Dalia's code start: User ingredients and recipe input-->
+        <main id="page-1">
+            <section id="welcome" class="hero is-medium">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title is-1 "> Welcome to Grumble </h1>
+                        <p>We know that planning a meal can be tiresome, and finding the right recipes can be daunting. That's why we created an app that does the hard part for you. </p>
                     </div>
-                    <div class="input">
-                        <label for="checkbox">Sample Ingredient</label>
-                        <input type="checkbox" name="checkbox" id="checkbox" />
+                </div>
+            </section>
+            
+            <section id="ingredients" class="hero is-large">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-6 is-offset-6" id="ingredients-column">
+                                <h1 class="title is-1 "> Your dinner starts here!</h1>
+                                <p>All you have to do is let us know what's in your fridge.</p>
+                                <hr class="content-divider">
+                                <form id="recipe-search">
+                                    <input type="text" name="ingredients" id="ingredient-input" class="button is-white is-inverted" value="Enter Ingredients Here" />
+                                    <a id="add-ingredient-button"class="button is-white is-inverted">Add Ingredient&ensp;<i class="fad fa-chevron-right"></i></a>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input">
-                        <label for="checkbox">Sample Ingredient</label>
-                        <input type="checkbox" name="checkbox" id="checkbox" />
+                </div>
+            </section>
+    
+            <section id="pastrecipe" class="hero is-large">
+                <div class="hero-body">
+                  <div class="container">
+                    <div class="columns">
+                      <div class="column is-6" id="past-recipes-column">
+                        <h1 class="title is-1 "> Past Recipes </h1>
+                        <p>Here's what we recommended last time you were here.</p>
+                        <hr class="content-divider">
+                      </div>
                     </div>
-                    <div class="input">
-                        <label for="checkbox">Sample Ingredient</label>
-                        <input type="checkbox" name="checkbox" id="checkbox" />
-                    </div>
-                    <div class="input">
-                        <label for="checkbox">Sample Ingredient</label>
-                        <input type="checkbox" name="checkbox" id="checkbox" />
-                    </div>
-                    <button type="submit">Next</button>
-                </form>
-            </div>
-        </section>
-        <section class="border">
-            <div>
-                <h2>What kind of meal do you want to eat</h2>
-            </div>
-            <form>
-                <div class="input">
-                    <label for="checkbox">Beef</label>
-                    <input type="checkbox" name="checkbox" id="checkbox" />
+                  </div>
                 </div>
-                <div class="input">
-                    <label for="checkbox">Chicken</label>
-                    <input type="checkbox" name="checkbox" id="checkbox" />
-                </div>
-                <div class="input">
-                    <label for="checkbox">Vegan</label>
-                    <input type="checkbox" name="checkbox" id="checkbox" />
-                </div>
-                <div class="input">
-                    <label for="checkbox">Seafood</label>
-                    <input type="checkbox" name="checkbox" id="checkbox" />
-                </div>
-                <div class="input">
-                    <label for="checkbox">Breakfast</label>
-                    <input type="checkbox" name="checkbox" id="checkbox" />
-                </div>
-                
-                <div class="input">
-                    <label for="checkbox">Lunch</label>
-                    <input type="checkbox" name="checkbox" id="checkbox" />
-                </div>
-                <div class="input">
-                    <label for="checkbox">Dinner</label>
-                    <input type="checkbox" name="checkbox" id="checkbox" />
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </section> -->
-        <section>
-            <div></div>
-        </section>
-        <section>
-            <div></div>
-        </section>
-        <section>
-            <h2>Past Recipes</h2>
-        </section>
+            </section>
         
-        <script src="./assets/js/recipe_script.js"></script>
-        <script src="./assets/js/cocktail-script.js"></script>
+        
+            <footer class="footer">
+                <div class="content has-text-centered">
+                <p>
+                    <strong>Grumble</strong> by <a href="https://jgthms.com">Tristan, Dalia and Rochelle </a>. The source code is licensed
+                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                    is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                </p>
+                </div>
+            </footer>
+        </main>
+
+        <script src="./assets/js/full-script.js"></script>
+
     </body>
 </html>
