@@ -241,7 +241,7 @@ function processAddingIngredient(){
             ingredientsArray.push(ingredientInput.value);
         }
         
-        ingredientInput.value = "Enter Ingredients Here";
+        ingredientInput.value = "";
 
         document.querySelector("#ingredient-section").appendChild(newIngredientCheckbox);
         document.querySelector("#ingredient-section").appendChild(newIngredientCheckboxLabel);
