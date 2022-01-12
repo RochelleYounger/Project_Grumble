@@ -3,22 +3,31 @@ var pageContentEl = document.querySelector("body");
 var homePageEl = document.querySelector("#page-1");
 var ingredientInput = document.querySelector("#ingredient-input");
 var ingredientsColumn = document.querySelector("#ingredients-column");
-var pastRecipeColumn = document.querySelector("#past-recipes-column");
+var pastRecipeContainer = document.querySelector(".past-recipes-container");
 
 var ingredientsArray = [];
 
 //Load Recipe Data on home page
 function loadSearchedRecipes(){
     var pastRecipes = JSON.parse(localStorage.getItem("pastRecipeResults"));
+    
     if(pastRecipes){
+        var recipesSectionEl = document.createElement("article");
+        recipesSectionEl.id="past-recipe-section";
+        recipesSectionEl.classList.add("columns","is-multiline");
+
         for(var i = 0; i < pastRecipes.length; i++){
-            var recipeContainer = document.createElement("div");
-            recipeContainer.id = "recipe-container";
-            recipeContainer.innerHTML = "<h2>" + pastRecipes[i].name + "</h2><a><img src=" + pastRecipes[i].image +"></a>";     
+            var instructionsUrl = pastRecipes[i].instructions;
+            var recipeContainer = document.createElement("a");
+            recipeContainer.href= instructionsUrl;
+            recipeContainer.target = "_blank";
+            recipeContainer.classList.add("column","is-4","recipe-container");
+            recipeContainer.innerHTML = "<div class='inner-recipe-container'><h2>" + pastRecipes[i].name + "</h2><img src=" + pastRecipes[i].image +"></div>";
+            console.log(recipesSectionEl);
+            recipesSectionEl.appendChild(recipeContainer); 
         }
-        if(recipeContainer){
-            pastRecipeColumn.appendChild(recipeContainer);
-        }
+
+        pastRecipeContainer.appendChild(recipesSectionEl);
     }
     else{
         return;
@@ -38,10 +47,12 @@ function processRecipes(checkedIngredients){
     var recipesPageEl = document.createElement("section");
     recipesPageEl.id = "page-2";
     recipesPageEl.className = "container";
+    recipesPageEl.innerHTML = "<h2 id='recipe-page-title'> Here's are some recipes we found for you!</h2>"
 
     var recipesSectionEl = document.createElement("article");
     recipesSectionEl.id="recipe-section";
-    recipesSectionEl.classList.add("row","columns","is-multiline");
+    recipesSectionEl.classList.add("columns","is-multiline");
+    
 
     recipesPageEl.appendChild(recipesSectionEl);
 
@@ -72,43 +83,43 @@ function processRecipes(checkedIngredients){
         }
     }
 
-    var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=db254b5cd61744d39a2deebd9c361444&ingredients=" + IngredientList + "&number=9";
-    fetch(requestUrl).then(function(response) {
+    var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=38545d201a64411f9a59e9f3477f3d7b&ingredients=" + IngredientList + "&number=4";
+     fetch(requestUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
                 var tempArray = [];
                 for(var i = 0; i < data.length; i++){
                     
-                    var tempObj = {
-                        name:data[i].title,
-                        image:data[i].image
-                    };
-                    
-                    tempArray.push(tempObj);
-                    
-                    
                 
                     var recipeId = data[i].id;
-                    var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=948e50c68fc14d59b9b4ff776f8fa614&includeNutrition=false";
-                    function getRecipeInfo() {
-                        fetch(requestUrl).then(function(response) {
+                    var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=38545d201a64411f9a59e9f3477f3d7b&includeNutrition=false";
+                    async function getInstruction(){
+                            await fetch(requestUrl).then(function(response) {
                             if (response.ok) {
                                 response.json().then(function(data) {
                                     var recipeUrl = data.sourceUrl;
-                                    var recipeContainer = document.createElement("div");
-                                    recipeContainer.classList.add("column","is-4");
-                                    recipeContainer.innerHTML = "<h2>" + data.title + "</h2><a href="  + recipeUrl +" target=_blank><img src=" +data.image +"></a>";
+                                    var recipeContainer = document.createElement("a");
+                                    recipeContainer.href= recipeUrl;
+                                    recipeContainer.target = "_blank";
+                                    recipeContainer.classList.add("column","is-4","recipe-container");
+                                    recipeContainer.innerHTML = "<div class='inner-recipe-container'><h2>" + data.title + "</h2><img src=" +data.image +"></div>";
                                     recipesSectionEl.appendChild(recipeContainer);
-                                
-        
                                     
+                                    var tempObj = {
+                                        name:data.title,
+                                        image:data.image,
+                                        instructions:recipeUrl
+                                    };
+
+                                    tempArray.push(tempObj);
+                                    saveSearchedRecipes(tempArray);
                                 })
                             }
                         })
                     }
-                    getRecipeInfo();
+                    getInstruction();
                 }
-                saveSearchedRecipes(tempArray);
+                
             })
         }
     })
@@ -179,6 +190,9 @@ function processBack(){
 
     if(document.querySelector("#recipe-container")){
         document.querySelector("#recipe-container").remove();
+    }
+    if(document.querySelector("#past-recipe-section")){
+        document.querySelector("#past-recipe-section").remove();
     }
 
     ingredientInput.value = "Enter Ingredients Here";
