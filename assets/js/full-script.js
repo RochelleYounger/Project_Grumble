@@ -84,7 +84,7 @@ function processRecipes(checkedIngredients){
         }
     }
 
-    var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=fa4bfefbedf24cb08b5c47730b102420&ingredients=" + IngredientList + "&number=4";
+    var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=b88b1aa61d964198a69db093f05b1985&ingredients=" + IngredientList + "&number=9";
      fetch(requestUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
@@ -93,7 +93,7 @@ function processRecipes(checkedIngredients){
                     
                 
                     var recipeId = data[i].id;
-                    var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=fa4bfefbedf24cb08b5c47730b102420&includeNutrition=false";
+                    var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=b88b1aa61d964198a69db093f05b1985&includeNutrition=false";
                     async function getInstruction(){
                             await fetch(requestUrl).then(function(response) {
                             if (response.ok) {
