@@ -222,6 +222,7 @@ function processAddingIngredient(){
         newIngredientCheckbox.checked = true;
 
         var newIngredientCheckboxLabel = document.createElement("label");
+        newIngredientCheckboxLabel.className = "ingredient-label";
         newIngredientCheckboxLabel.htmlFor = ingredientInput.value;
         newIngredientCheckboxLabel.innerText = ingredientInput.value;
         

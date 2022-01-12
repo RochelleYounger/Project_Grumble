@@ -104,8 +104,25 @@ hr.content-divider {
 
 #ingredients input::placeholder {
   color: white !important;
+  margin-bottom: 50px;
 }
 
+.ingredient-checkbox {
+  padding: 15px 0px;
+}
+
+.ingredient-label {
+  padding: 50px 10px;
+  font-size: 20px;
+  color: white;
+}
+
+#add-ingredient-button {
+  margin-bottom: 20px;
+}
+#find-recipes-button {
+  margin-top: 20px;
+}
 /*Past Recipes Section*/
 #pastrecipe {
   background: url(../img/Past-Recipes-Background-Img.jpg);
