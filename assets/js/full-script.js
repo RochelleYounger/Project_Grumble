@@ -211,7 +211,7 @@ function processBack(){
 //Process adding ingredients
 function processAddingIngredient(){
     
-    if(!ingredientInput.value || ingredientInput.value === "Enter Ingredients Here"){
+    if(!ingredientInput.value){
         return;
     }
     else{
@@ -263,15 +263,13 @@ function processAddingIngredient(){
 //Process user clicks
 function clickHandler(event){
 
-    event.preventDefault();
     var clickedEl = event.target;
 
     if(clickedEl.matches("#ingredient-input")){
         clickedEl.value = "";
     }
 
-    else if(clickedEl.matches("#add-ingredient-button") || clickedEl.matches("#recipe-search")){
-        
+    else if(clickedEl.matches("#add-ingredient-button")){
         processAddingIngredient();
     }
 
