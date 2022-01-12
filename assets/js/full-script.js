@@ -37,10 +37,14 @@ function processRecipes(checkedIngredients){
     
     var recipesPageEl = document.createElement("section");
     recipesPageEl.id = "page-2";
+    recipesPageEl.className = "container";
 
     var recipesSectionEl = document.createElement("article");
-    recipesSectionEl.id="recipe-section"
+    recipesSectionEl.id="recipe-section";
+    recipesSectionEl.classList.add("row","columns","is-multiline");
+
     recipesPageEl.appendChild(recipesSectionEl);
+
 
     var cocktailSectionEl = document.createElement("article");
     cocktailSectionEl.id = "cocktail-section"
@@ -75,6 +79,7 @@ function processRecipes(checkedIngredients){
                 var tempArray = [];
                 for(var i = 0; i < data.length; i++){
                     var recipeContainer = document.createElement("div");
+                    recipeContainer.classList.add("column","is-4");
                     recipeContainer.innerHTML = "<h2>" + data[i].title + "</h2><a><img src=" +data[i].image +"></a>";
                     recipesSectionEl.appendChild(recipeContainer);
                     
