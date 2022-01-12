@@ -41,8 +41,8 @@ var test = function (event) {
                                 if (response.ok) {
                                     response.json().then(function(data) {
                                         console.log(data);
-                                        console.log(data.analyzedInstructions);
-                                        console.log(data.analyzedInstructions[0].steps);
+                                        // console.log(data.analyzedInstructions);
+                                        // console.log(data.analyzedInstructions[0].steps);
 
                                         var recipeCardEl = document.createElement("div");
                                         recipeCardEl.classList.add("recipe-card");
@@ -57,24 +57,24 @@ var test = function (event) {
                                         recipeImg.src = data.image;
                                         recipeCardEl.appendChild(recipeImg);
                     
-                                        var recipeIngredientsEl = document.createElement("h2")
-                                        recipeIngredientsEl.innerText = "Ingredients"
-                                        recipeCardEl.appendChild(recipeIngredientsEl);
+                                        // var recipeIngredientsEl = document.createElement("h2")
+                                        // recipeIngredientsEl.innerText = "Ingredients"
+                                        // recipeCardEl.appendChild(recipeIngredientsEl);
     
-                                        for (var i=0; i < data.extendedIngredients.length; i++) {
-                                            var ingredientEl = document.createElement("p");
-                                            ingredientEl.innerText = data.extendedIngredients[i].name;
-                                            recipeCardEl.appendChild(ingredientEl);
-                                        }
-                                        var recipeStepsEl = document.createElement("h2");
-                                        recipeStepsEl.innerText = "Instructions";
-                                        recipeCardEl.appendChild(recipeStepsEl);
+                                        // for (var i=0; i < data.extendedIngredients.length; i++) {
+                                        //     var ingredientEl = document.createElement("p");
+                                        //     ingredientEl.innerText = data.extendedIngredients[i].name;
+                                        //     recipeCardEl.appendChild(ingredientEl);
+                                        // }
+                                        // var recipeStepsEl = document.createElement("h2");
+                                        // recipeStepsEl.innerText = "Instructions";
+                                        // recipeCardEl.appendChild(recipeStepsEl);
     
-                                        for (var i=0; i < data.analyzedInstructions[0].steps.length; i++) {
-                                            var stepEl = document.createElement("p");
-                                            stepEl.innerText = "Step " + (i+1) + "   " +  data.analyzedInstructions[0].steps[i].step;
-                                            recipeCardEl.appendChild(stepEl);
-                                        }
+                                        // for (var i=0; i < data.analyzedInstructions[0].steps.length; i++) {
+                                        //     var stepEl = document.createElement("p");
+                                        //     stepEl.innerText = "Step " + (i+1) + "   " +  data.analyzedInstructions[0].steps[i].step;
+                                        //     recipeCardEl.appendChild(stepEl);
+                                        // }
     
                                         var linkEl = document.createElement("h2");
                                         linkEl.innerText = "Link";
