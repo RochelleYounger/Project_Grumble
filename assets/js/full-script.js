@@ -68,7 +68,7 @@ function processRecipes(checkedIngredients){
         }
     }
 
-    var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=db254b5cd61744d39a2deebd9c361444&ingredients=" + IngredientList + "&number=1";
+    var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=db254b5cd61744d39a2deebd9c361444&ingredients=" + IngredientList + "&number=9";
     fetch(requestUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
@@ -91,14 +91,15 @@ function processRecipes(checkedIngredients){
                         fetch(requestUrl).then(function(response) {
                             if (response.ok) {
                                 response.json().then(function(data) {
-                                    console.log(data);
-        
+
                                     
-                                    console.log(data);
+                                for(var i = 0; i < data.length; i++){
+
                                     var recipeUrl = data.sourceUrl;
                                     var recipeContainer = document.createElement("div");
                                     recipeContainer.innerHTML = "<h2>" + data.title + "</h2><a href="  + recipeUrl +" target=_blank><img src=" +data.image +"></a>";
                                     recipesSectionEl.appendChild(recipeContainer);
+                                }
         
                                     
                                 })
