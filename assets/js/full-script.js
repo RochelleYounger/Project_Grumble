@@ -87,9 +87,36 @@ function processRecipes(checkedIngredients){
                         name:data[i].title,
                         image:data[i].image
                     };
+                    
                     tempArray.push(tempObj);
+                    
+                    
+                    console.log(data[i]);
+                
+                    var recipeId = data[i].id;
+                    console.log(recipeId);
+                    var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=948e50c68fc14d59b9b4ff776f8fa614&includeNutrition=false";
+                    function getRecipeInfo() {
+                        fetch(requestUrl).then(function(response) {
+                            if (response.ok) {
+                                response.json().then(function(data) {
+                                    console.log(data);
+        
+                                    
+                                    console.log(data);
+                                    var recipeUrl = data.sourceUrl;
+                                    var recipeContainer = document.createElement("div");
+                                    recipeContainer.innerHTML = "<h2>" + data.title + "</h2><a href="  + recipeUrl +" target=_blank><img src=" +data.image +"></a>";
+                                    recipesSectionEl.appendChild(recipeContainer);
+        
+                                    
+                                })
+                            }
+                        })
+                    }
                 }
                 saveSearchedRecipes(tempArray);
+                getRecipeInfo(data);
             })
         }
     })
@@ -129,6 +156,8 @@ function processRecipes(checkedIngredients){
                                 cocktailContainer.innerHTML += "<p>" + data2.drinks[0].strInstructions + "</p>";
 
                                 cocktailSectionEl.appendChild(cocktailContainer);
+
+
 
                             })
 
