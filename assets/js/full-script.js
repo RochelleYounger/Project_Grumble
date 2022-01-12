@@ -300,4 +300,3 @@ function clickHandler(event){
 }
 
 pageContentEl.addEventListener("click", clickHandler);
-pageContentEl.addEventListener("submit",clickHandler);
