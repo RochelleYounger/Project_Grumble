@@ -202,8 +202,7 @@ function processBack(){
     if(document.querySelector("#past-recipe-section")){
         document.querySelector("#past-recipe-section").remove();
     }
-
-    ingredientInput.value = "Enter Ingredients Here";
+    
     ingredientsArray = [];
     loadSearchedRecipes();
 }
@@ -265,11 +264,7 @@ function clickHandler(event){
 
     var clickedEl = event.target;
 
-    if(clickedEl.matches("#ingredient-input")){
-        clickedEl.value = "";
-    }
-
-    else if(clickedEl.matches("#add-ingredient-button")){
+    if(clickedEl.matches("#add-ingredient-button")){
         processAddingIngredient();
     }
 
@@ -297,4 +292,13 @@ function clickHandler(event){
 
 }
 
+function formSubmissionHandler(event){
+    
+    event.preventDefault();
+    if(event.target.matches("#recipe-search")){
+        processAddingIngredient();
+    }
+}
+
 pageContentEl.addEventListener("click", clickHandler);
+pageContentEl.addEventListener("submit", formSubmissionHandler);

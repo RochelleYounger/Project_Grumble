@@ -103,8 +103,12 @@ hr.content-divider {
 }
 
 #ingredients input::placeholder {
-  color: white !important;
+  color: white;
   margin-bottom: 50px;
+}
+
+#ingredients input:focus::placeholder {
+  color: transparent;
 }
 
 .ingredient-checkbox {
