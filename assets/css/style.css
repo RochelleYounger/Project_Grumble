@@ -123,6 +123,28 @@ hr.content-divider {
 #find-recipes-button {
   margin-top: 20px;
 }
+/*Cocktail Section*/
+#cocktail-section {
+  background-color: var(--background-color);
+  padding: 100px;
+  margin: 50px;
+  border-radius: 20px;
+}
+.cocktail-subtitle {
+  color: var(--section2-color);
+  font-size: 25px;
+  font-weight: bold;
+}
+#cocktail-title {
+  color: var(--section1-color);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/*Back Button*/
+.back-button {
+  margin: 50px 0px;
+}
 /*Past Recipes Section*/
 #pastrecipe {
   background: url(../img/Past-Recipes-Background-Img.jpg);

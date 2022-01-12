@@ -59,6 +59,7 @@ function processRecipes(checkedIngredients){
 
     var cocktailSectionEl = document.createElement("article");
     cocktailSectionEl.id = "cocktail-section"
+    cocktailSectionEl.classList.add("columns","is-multiline","is-vcentered");
     recipesPageEl.appendChild(cocktailSectionEl);
 
     var BackSectionEl = document.createElement("article");
@@ -83,7 +84,7 @@ function processRecipes(checkedIngredients){
         }
     }
 
-    var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=38545d201a64411f9a59e9f3477f3d7b&ingredients=" + IngredientList + "&number=4";
+    var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=fa4bfefbedf24cb08b5c47730b102420&ingredients=" + IngredientList + "&number=4";
      fetch(requestUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
@@ -92,7 +93,7 @@ function processRecipes(checkedIngredients){
                     
                 
                     var recipeId = data[i].id;
-                    var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=38545d201a64411f9a59e9f3477f3d7b&includeNutrition=false";
+                    var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=fa4bfefbedf24cb08b5c47730b102420&includeNutrition=false";
                     async function getInstruction(){
                             await fetch(requestUrl).then(function(response) {
                             if (response.ok) {
@@ -130,15 +131,24 @@ function processRecipes(checkedIngredients){
 
             response2.json().then(function (data2) {
 
+                var cocktailTitleContainer = document.createElement("div");
+                cocktailTitleContainer.classList.add("column","is-12");
+                cocktailTitleContainer.innerHTML = "<h2 id='cocktail-title'> Looking for a drink to go with your meal? Try this!</h2>"
+                cocktailSectionEl.appendChild(cocktailTitleContainer);
+
                 var cocktailContainer = document.createElement("div");
-                cocktailContainer.innerHTML = "<h2>" + data2.drinks[0].strDrink + "</h2><a><img src=" +data2.drinks[0].strDrinkThumb+"></a>";
+                cocktailContainer.classList.add("column","is-6");
+                cocktailContainer.innerHTML = "<h2 class='cocktail-subtitle'>" + data2.drinks[0].strDrink + "</h2><img src=" +data2.drinks[0].strDrinkThumb+">";
+                cocktailSectionEl.appendChild(cocktailContainer);
 
                 fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + data2.drinks[0].idDrink)
                     .then(function (response3) {
                         if (response3.ok) {
 
                             response3.json().then(function (data3) {
-                                cocktailContainer.innerHTML+="<h2>Ingredients</h2>"
+                                var cocktailInfoContainer = document.createElement("div");
+                                cocktailInfoContainer.classList.add("column","is-6");
+                                cocktailInfoContainer.innerHTML+="<h2 class='cocktail-subtitle'>Ingredients</h2>"
 
                                 var isNull = false;
                                 var incrementedIngredient = 1;
@@ -146,7 +156,7 @@ function processRecipes(checkedIngredients){
                                 while (!isNull) {
                                     var ingredientSearch = "data3.drinks[0].strIngredient" + incrementedIngredient;
                                     if (eval(ingredientSearch)) {
-                                        cocktailContainer.innerHTML += "<p>"+eval(ingredientSearch)+"</p>";
+                                        cocktailInfoContainer.innerHTML += "<p>- "+eval(ingredientSearch)+"</p>";
                                         incrementedIngredient += 1;
                                     }
                                     else {
@@ -155,12 +165,10 @@ function processRecipes(checkedIngredients){
 
                                 }
 
-                                cocktailContainer.innerHTML += "<h2>Instructions</h2>"
-                                cocktailContainer.innerHTML += "<p>" + data2.drinks[0].strInstructions + "</p>";
+                                cocktailInfoContainer.innerHTML += "<h2 class='cocktail-subtitle'>Instructions</h2>"
+                                cocktailInfoContainer.innerHTML += "<p>" + data2.drinks[0].strInstructions + "</p>";
 
-                                cocktailSectionEl.appendChild(cocktailContainer);
-
-
+                                cocktailSectionEl.appendChild(cocktailInfoContainer);
 
                             })
 
