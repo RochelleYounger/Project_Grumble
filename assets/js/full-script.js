@@ -72,16 +72,12 @@ function processRecipes(checkedIngredients){
         }
     }
 
-    var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=db254b5cd61744d39a2deebd9c361444&ingredients=" + IngredientList + "&number=1";
+    var requestUrl = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=db254b5cd61744d39a2deebd9c361444&ingredients=" + IngredientList + "&number=9";
     fetch(requestUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
                 var tempArray = [];
                 for(var i = 0; i < data.length; i++){
-                    var recipeContainer = document.createElement("div");
-                    recipeContainer.classList.add("column","is-4");
-                    recipeContainer.innerHTML = "<h2>" + data[i].title + "</h2><a><img src=" +data[i].image +"></a>";
-                    recipesSectionEl.appendChild(recipeContainer);
                     
                     var tempObj = {
                         name:data[i].title,
@@ -91,21 +87,16 @@ function processRecipes(checkedIngredients){
                     tempArray.push(tempObj);
                     
                     
-                    console.log(data[i]);
                 
                     var recipeId = data[i].id;
-                    console.log(recipeId);
                     var requestUrl = "https://api.spoonacular.com/recipes/" + recipeId +"/information?apiKey=948e50c68fc14d59b9b4ff776f8fa614&includeNutrition=false";
                     function getRecipeInfo() {
                         fetch(requestUrl).then(function(response) {
                             if (response.ok) {
                                 response.json().then(function(data) {
-                                    console.log(data);
-        
-                                    
-                                    console.log(data);
                                     var recipeUrl = data.sourceUrl;
                                     var recipeContainer = document.createElement("div");
+                                    recipeContainer.classList.add("column","is-4");
                                     recipeContainer.innerHTML = "<h2>" + data.title + "</h2><a href="  + recipeUrl +" target=_blank><img src=" +data.image +"></a>";
                                     recipesSectionEl.appendChild(recipeContainer);
         
