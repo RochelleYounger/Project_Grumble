@@ -211,7 +211,7 @@ function processBack(){
 //Process adding ingredients
 function processAddingIngredient(){
     
-    if(!ingredientInput.value || ingredientInput.value === "Enter Ingredients Here"){
+    if(!ingredientInput.value){
         return;
     }
     else{
