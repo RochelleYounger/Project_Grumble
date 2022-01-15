@@ -1,102 +1,115 @@
-.va {
-    display: flex;
+#carousel-section {
+    background-color: #f7f7f7 !important;
+    padding: 50px 0;
+    margin-bottom: 50px;
+  }
+  
+  #carousel-demo {
+    margin-top: 50px;
+  }
+  
+  #card-product-description {
+    color: orange;
+  }
+  
+  #meal-recipe-section {
+    background-image: url(https://technext.github.io/tropika/images/tasty-image.png);
+    background-repeat: no-repeat;
+    height: 400px;
     align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 100px;
   }
   
-  .hero{
-    background: url(https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500), linear-gradient(52deg, #42475C 0%, #20222E 71%);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .cta {
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHTEANZOtGuJKCdCDi1VId-n01P5-Irkj2w&usqp=CAU), linear-gradient(52deg, #42475C 0%, #20222E 71%);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  .card:hover {
+    transform: scale(1.02);
+    border-top: 5px solid #fc5d35;
   }
   
-  .cta {
+  .is-white-text-title {
+    color: white !important;
+    text-transform: uppercase;
+  }
+  
+  .is-256x256 {
+    width: 256px !important;
+    height: 256px !important;
+  }
+  
+  #contact-section {
+    background-image: url(https://technext.github.io/tropika//images/orange-dish.png);
+    background-repeat: no-repeat;
     height: 500px;
-    border-top: 10px solid turquoise;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    background-position: right center;
+    overflow: hidden;
   }
   
-  footer {
-    color: white;
-    background: rgb(14, 14, 14) !important;
+  input.is-custom-field {
+    border-bottom: 0.8px solid #252525 !important;
+    outline: none;
+    border: none;
+    box-shadow: none !important;
+    /* width: 90% !important; */
+    border-radius: unset;
   }
   
-  footer strong {
-    color: turquoise;
+  textarea {
+    border-bottom: 0.8px solid #252525 !important;
+    outline: none !important;
+    border: none;
+    box-shadow: none !important;
+    border-radius: unset;
+    border-color: none !important;
+    outline-color: none !important;
   }
   
-  footer a {
-    color: turquoise;
+  #map {
+    width: 100% !important;
+    height: 400px;
+    margin-bottom: 50px;
   }
   
-  .title {
-    color: white;
-    font-weight: 800;
-    font-size: 4rem;
-    font-family: 'Nunito Sans', sans-serif;
-    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3);
+  .footer-main {
+    background-color: white !important;
+    padding: 0 !important;
   }
   
-  .subtitle {
-    color: white;
-    font-size: 1.2rem;
-    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3);
+  .footer-secondary {
+    padding: 20px;
+    margin-top: 20px;
   }
   
-  hr.content-divider {
-    max-width: 75px;
-    height: 5px;
-  }
-  
-  #parallax-1 {
-    background: url(https://www.acouplecooks.com/wp-content/uploads/2020/12/Honey-Garlic-Shrimp-026-735x919.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top: 10px solid coral;
-  }
-  
-  #parallax-1 hr {
-    background: coral;
-  }
-  
-  #parallax-2 {
-    background: url(https://www.acouplecooks.com/wp-content/uploads/2020/01/Sheet-Pan-Dinner-019.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top: 10px solid yellow;
-  }
-  
-  #parallax-2 hr {
-    background: yellow;
-  }
-  
-  .label {
-    color: white;
-  }
-
-  .email {
-    color: white;
-  }
-  
-  input {
-    background: transparent !important;
-    border: 1px solid turquoise !important;
+  .button.is-black {
+    background-color: black !important;
     color: white !important;
   }
   
-  input::placeholder {
+  .button.is-orange {
+    background-color: #fc5d35 !important;
     color: white !important;
+  }
+  
+  .button.is-orange:hover {
+    background-color: white !important;
+    color: #fc5d35 !important;
+  }
+  .button.is-black:hover {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .is-black-social {
+    color: black !important;
+  }
+  .is-black-social:hover {
+    background-color: white !important;
+    color: #fc5d35 !important;
   }
   
