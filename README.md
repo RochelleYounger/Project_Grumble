@@ -1,14 +1,14 @@
 # Project-1
 ## Description 
 Grumble is a simple application that helps you plan out your meals when you just can’t decide what to eat based on what ingredients you already have at home.
-Our app is the solution to your hunger! It’s efficient and easy to use. No more wasting time debating, pondering, and wondering what’s for dinner. Grumble takes the stress out of cooking. Meals are based on the ingredients you have on hand. Simply give it a list of items, and Grumble will generate recipes with the ingredients in your fridge! Want a drink with that too? Feeling adventurous? Grumble also generates a random cocktail recipe to go with your meal. A new experience for you to try to go along with your stress-free, carefully chosen recipes. Don’t like that option? Grumble allows you to generate cocktail recipes multiple times to find a cocktail you want to try. You’ll never go hungry again. You’ll never need to stress over dinner again. Need a recipe? Choose Grumble! 
+It’s efficient and easy to use. No more wasting time debating, pondering, and wondering what’s for dinner. Grumble takes the stress out of cooking. Meals are based on the ingredients you have on hand. Simply give it a list of items, and Grumble will generate recipes with the ingredients in your fridge! Want a drink with that too? Feeling adventurous? Grumble also generates a random cocktail recipe to go with your meal. A new experience for you to try to go along with your stress-free, carefully chosen recipes. Don’t like that option? Grumble allows you to generate cocktail recipes multiple times to find a cocktail you want to try. You’ll never go hungry again. You’ll never need to stress over dinner again. Need a recipe? Choose Grumble! 
 
 ## UI Mockup
 
 <img src="./assets/img/readme1.PNG">
 <img src="./assets/img/readme2.PNG">
-<img src="./assets/img/readme3.PNG">
 <img src="./assets/img/readme4.PNG">
+<img src="./assets/img/readme3.PNG">
 
 ## APIs Used
 * Spoonacular API (Food recipe)
@@ -32,6 +32,7 @@ When I scroll down, I am presented with a past recipe section that includes the 
 * Dalia Farag 
 * Rochelle Younger 
 
+<img src="./assets/img/teampic.png">
 
 ## Application Wireframe 
 ### Grumble DataFlow
